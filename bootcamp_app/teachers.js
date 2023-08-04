@@ -18,9 +18,9 @@ JOIN cohorts ON cohorts.id = cohort_id
 WHERE cohorts.name = '${process.argv[2] || 'JUL02'}'
 ORDER BY teacher;
 `)
-.then(res => {
+  .then(res => {
   //loop through the array of objects
-  res.rows.forEach(element => {
-    console.log(`${element.cohort}: ${element.teacher}`);
-  })
-}).catch(err => console.error('query error', err.stack));
+    res.rows.forEach(element => {
+      console.log(`${element.cohort}: ${element.teacher}`);
+    });
+  }).catch(err => console.error('query error', err.stack));
